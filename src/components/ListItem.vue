@@ -1,20 +1,22 @@
 <template>
-  <div class="container">
-    <ul class="main_list">
+  
+    
+        
       <li>
-        <a href="">
+<router-link :to="{name: 'PokemonView', params: {name: this.name, data: this.pokemonData}}">
           <img class="illustration" :src="currentImg" alt="Pokemon" />
           <div class="name">
             {{ upperCaseFirstLetter }}<span class="number"> {{ num }}</span>
           </div>
-        </a>
+          </router-link>
       </li>
-    </ul>
-  </div>
+      
+    
+  
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "ListItem",
   data() {
@@ -25,24 +27,27 @@ export default {
     };
   },
   props: {
-    num: Number, 
+    num: Number,
     name: String, // On récupère les data du composants parents 'HomeView'
     url: String,
   },
   computed: {
     upperCaseFirstLetter: function () {
-      let pokemonName = this.name[0].toUpperCase() + this.name.slice(1); 
+      let pokemonName = this.name[0].toUpperCase() + this.name.slice(1);
       return pokemonName;
     },
   },
-  created: function() {
-      axios.get(this.url).then(response => {
-          this.pokemonData = response.data;
-          this.currentImg = response.data.sprites.front_default;
-      }).catch(error => {
-          console.log(error);
+  created: function () {
+    axios
+      .get(this.url)
+      .then((response) => {
+        this.pokemonData = response.data;
+        this.currentImg = response.data.sprites.front_default;
+      })
+      .catch((error) => {
+        console.log(error);
       });
-  }
+  },
 };
 </script>
 

@@ -36,7 +36,7 @@ ul {
 }
 
 img {
-    max-width: 100%;
+    max-width:100%;
 }
 
 header a, header a:visited {

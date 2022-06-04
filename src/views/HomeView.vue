@@ -1,14 +1,15 @@
 <template>
   <div>
     <HeaderItem />
-
-    <div v-for="(pokemon, index) in filteredPokemons" :key="pokemon.url">
+<div class="container">
+  <ul class="main_list">
     <ListItem 
+    v-for="(pokemon, index) in filteredPokemons" :key="pokemon.url"
     :num="index+1"
     :name="pokemon.name"
     :url="pokemon.url"/>
-    </div>
-
+    </ul>
+</div>
   </div>
 </template>
 
