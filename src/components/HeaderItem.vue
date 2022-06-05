@@ -1,13 +1,11 @@
 <template>
   <header>
         <div class="container">
-            <a class="logo" href="">Pokédex</a>
-            <nav>
-                <ul>
-                    <li><a href="">Liste</a></li>
-                    <li><a href="">Types</a></li>
-                </ul>
-            </nav>
+            <router-link :to="{name: 'HomeView'}">
+    <a class="logo" href="">Pokédex</a>
+    </router-link>
+    <input type="search" name="" id="">
+            
         </div>
     </header>
 </template>

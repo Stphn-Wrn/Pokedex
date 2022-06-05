@@ -4,7 +4,7 @@
         
       <li>
 <router-link :to="{name: 'PokemonView', params: {name: this.name, data: this.pokemonData}}">
-          <img class="illustration" :src="currentImg" alt="Pokemon" />
+          <img :src="currentImg" alt="Pokemon" />
           <div class="name">
             {{ upperCaseFirstLetter }}<span class="number"> {{ num }}</span>
           </div>
@@ -37,17 +37,25 @@ export default {
       return pokemonName;
     },
   },
-  created: function () {
-    axios
-      .get(this.url)
+    created: function () {
+    axios.get(this.url)
       .then((response) => {
         this.pokemonData = response.data;
         this.currentImg = response.data.sprites.front_default;
-      })
+        
+        caches.open('pokedexImg').then(function(cache) {
+           return cache.add(response.data.sprites.front_default);
+         }
+       )
+    })
       .catch((error) => {
         console.log(error);
-      });
+      })
+
+      
+
   },
+  
 };
 </script>
 

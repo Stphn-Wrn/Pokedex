@@ -38,7 +38,9 @@ ul {
 img {
     max-width:100%;
 }
-
+.illustration {
+    width:400px;
+}
 header a, header a:visited {
     color: #c14040;
 }
@@ -62,6 +64,12 @@ header ul li {
 }
 .logo {
     font-size: 1.5rem;
+}
+input {
+    border:solid 1px #c14040;
+      border-radius: 22px;
+      height:1.5rem;
+      text-indent:10px;
 }
 .main_list {
     margin-top: 1rem;

@@ -19,22 +19,10 @@
           <div class="stat">
             <div class="label">Height :</div>
             <div class="value">{{ pokemon.height }}</div>
-            <div class="stat_container">
-              <div
-                class="bar_height_value"
-                style="width: "
-              ></div>
-            </div>
           </div>
           <div class="stat">
             <div class="label">Poids</div>
             <div class="value">{{ pokemon.weight }}</div>
-            <div class="stat_container">
-              <div
-                class="bar_value"
-                style="width: "
-              ></div>
-            </div>
           </div>
           <div class="stat">
             <div class="label">Type :</div>
@@ -52,7 +40,9 @@
       </div>
       
     </div>
+    <router-link :to="{name: 'HomeView'}">
     <a class="back" href="">Revenir à la liste</a>
+    </router-link>
   </div>
   </main>
   </div>
@@ -73,7 +63,6 @@ export default {
         abilities: [],
         types: [],
         front: '',
-        back: '',
         height: 0,
         weight: 0,
       }

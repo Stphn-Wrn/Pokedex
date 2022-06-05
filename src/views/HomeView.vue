@@ -1,10 +1,12 @@
 <template>
   <div>
-    <HeaderItem />
+    <HeaderItem 
+    filteredPokemons/>
 <div class="container">
   <ul class="main_list">
     <ListItem 
-    v-for="(pokemon, index) in filteredPokemons" :key="pokemon.url"
+    v-for="(pokemon, index) in filteredPokemons" 
+    :key="pokemon.url"
     :num="index+1"
     :name="pokemon.name"
     :url="pokemon.url"/>
@@ -36,7 +38,9 @@ export default {
     }).catch(error => {
       console.log(error);
     });
-  }
+
+  },
+
 };
 </script>
 <style>
