@@ -39,7 +39,7 @@ img {
     max-width:100%;
 }
 .illustration {
-    width:400px;
+    width:200px;
 }
 header a, header a:visited {
     color: #c14040;
@@ -55,19 +55,24 @@ header .container {
     border-radius: 22px;
     padding: 1rem;
 }
-header nav ul {
+header nav{
     display: flex;
 }
 
-header ul li {
-    margin-right: 0.5rem;
-}
 .logo {
     font-size: 1.5rem;
 }
+button {
+    height:1.5rem;
+    border:solid 1px #c14040;
+border-top-right-radius: 22px;
+border-bottom-right-radius: 22px;
+    width:50px;
+}
 input {
     border:solid 1px #c14040;
-      border-radius: 22px;
+      border-top-left-radius: 22px;
+border-bottom-left-radius: 22px;
       height:1.5rem;
       text-indent:10px;
 }
@@ -125,11 +130,8 @@ h1 {
 .stat .label {
     flex: 2;
 }
-.stat .stat_container {
-    flex:4;
-    border-radius: 5px;
-    overflow: hidden;
-    background: #632b2b;
+.value {
+        text-transform:capitalize;
 }
 .stat .value {
     flex: 1;

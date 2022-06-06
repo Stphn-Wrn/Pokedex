@@ -2,46 +2,33 @@
 <div><HeaderItem/>
 <main>
   <div class="main_pokemon">
-    <h1>Détails de {{ upperCaseFirstLetter }}</h1>
+    <h1>Details of {{ upperCaseFirstLetter }}</h1>
     <div class="wrapper">
       <div class="left_side">
         <img class="illustration" :src="currentImg" alt="pokemon" />
       </div>
       <div class="right_side">
-        <h2 class="title"><span></span></h2>
-        <div class="types">
-          <ul>
-            <li class="type"></li>
-          </ul>
-        </div>
+
         <div class="stats">
-          <h3>Statistiques</h3>
+          <h3>Stats</h3>
           <div class="stat">
             <div class="label">Height :</div>
             <div class="value">{{ pokemon.height }}</div>
           </div>
           <div class="stat">
-            <div class="label">Poids</div>
+            <div class="label">Weight:</div>
             <div class="value">{{ pokemon.weight }}</div>
           </div>
           <div class="stat">
             <div class="label">Type :</div>
-            <div class="value" v-for="(value, index) in pokemon.types" :key="index">{{ value }}</div>
-
-          </div>
-          <div class="stat">
-            <div class="label">Abilité :</div>
-            <div class="value" v-for="(value, index) in pokemon.abilities" :key="index">{{ value.name }}</div>
-            
-          </div>
-         
-         
+            <div class="value">{{ pokemon.types[0] }}</div>
+          </div>        
         </div>
       </div>
       
     </div>
     <router-link :to="{name: 'HomeView'}">
-    <a class="back" href="">Revenir à la liste</a>
+    <a class="back" href="">Back to Pokédex</a>
     </router-link>
   </div>
   </main>
@@ -59,6 +46,7 @@ export default {
       currentImg: '',
       data: {},
       pokemon: {
+        num: '',
         name: '',
         abilities: [],
         types: [],
