@@ -2,9 +2,7 @@
 node_modules
 /dist
 package-lock.json
-vue.config.js
-babel.config.js
-jsconfig.json
+
 
 # local env files
 .env.local

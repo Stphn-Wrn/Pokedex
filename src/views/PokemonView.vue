@@ -46,7 +46,6 @@ export default {
       currentImg: '',
       data: {},
       pokemon: {
-        num: '',
         name: '',
         abilities: [],
         types: [],
